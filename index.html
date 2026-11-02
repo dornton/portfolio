@@ -1,135 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0a0a0a">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ccircle cx='32' cy='32' r='15' fill='none' stroke='%23bf1229' stroke-width='3'/%3E%3C/svg%3E">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://cdn.jsdelivr.net; base-uri 'none'; form-action 'none'">
-<title>Angelica Dornton | Developer &amp; Designer Portfolio</title>
-<meta name="description" content="Portfolio of Angelica Dornton, a full-stack web developer and graphic designer. PHP, MySQL, Laravel, Figma. Open to internships and freelance.">
-<meta name="keywords" content="bloptracking, noise, ascii, texture, marquees, distressed, web developer, designer portfolio">
-<meta name="author" content="Angelica Dornton">
-<link rel="canonical" href="https://eliutot.github.io/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Angelica Dornton | Developer &amp; Designer">
-<meta property="og:description" content="Full-stack web apps with a designer's eye for type, layout and color.">
-<meta property="og:url" content="https://eliutot.github.io/">
-<meta property="og:image" content="https://eliutot.github.io/og.png">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css">
-<script type="application/ld+json">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon"
+    href="punpun.png">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn.jsdelivr.net; base-uri 'none'; form-action 'none'">
+  <title>Angelica's Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Angelica Dornton, a full-stack web developer and graphic designer. PHP, MySQL, Laravel, Figma. Open to internships and freelance.">
+  <meta name="keywords"
+    content="bloptracking, noise, ascii, texture, marquees, distressed, web developer, designer portfolio">
+  <meta name="author" content="Angelica Dornton">
+  <link rel="canonical" href="https://eliutot.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Angelica Dornton | Developer &amp; Designer">
+  <meta property="og:description" content="Full-stack web apps with a designer's eye for type, layout and color.">
+  <meta property="og:url" content="https://eliutot.github.io/">
+  <meta property="og:image" content="https://eliutot.github.io/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="assets/cavalhatriz.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="site.css">
+  <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebSite","@id":"https://eliutot.github.io/#site","url":"https://eliutot.github.io/","name":"Angelica Dornton","inLanguage":"en"},
 {"@type":"ProfilePage","url":"https://eliutot.github.io/","isPartOf":{"@id":"https://eliutot.github.io/#site"},"mainEntity":{"@id":"https://eliutot.github.io/#me"}},
 {"@type":"Person","@id":"https://eliutot.github.io/#me","name":"Angelica Dornton","jobTitle":"Web developer and graphic designer","email":"mailto:aj-dornton@proton.me","url":"https://eliutot.github.io/","knowsAbout":["PHP","MySQL","Laravel","JavaScript","Figma","Adobe Illustrator"],"alumniOf":"ICSA Kuwait","sameAs":["https://github.com/eliutot","https://www.behance.net/angelicadornton","https://www.figma.com/@dornton"]}]}
 </script>
 </head>
+
 <body>
-<canvas id="grid" aria-hidden="true"></canvas>
-<canvas id="noise" aria-hidden="true"></canvas>
-<canvas id="blob" aria-hidden="true"></canvas>
-<div id="xh" aria-hidden="true"></div>
+  <canvas id="grid" aria-hidden="true"></canvas>
+  <canvas id="noise" aria-hidden="true"></canvas>
+  <canvas id="blob" aria-hidden="true"></canvas>
+  <div id="xh" aria-hidden="true"></div>
 
-<div id="boot" role="status"><pre id="bootlog"></pre><button id="skip" type="button">Skip</button></div>
+  <div id="boot" role="status">
+    <pre id="bootlog"></pre><button id="skip" type="button">Skip</button>
+  </div>
 
-<aside id="sys" aria-label="Terminal navigation">
-  <p class="who">visitor@dornton:<span id="ps">/</span></p>
-  <nav class="cmds" aria-label="Sections">
-    <button type="button" data-cmd="cd /" data-s="HOME">$ cd /</button>
-    <button type="button" data-cmd="cd /projects" data-s="DIR: /projects">$ cd /projects</button>
-    <button type="button" data-cmd="cat /about_me.txt" data-s="FILE: about_me.txt">$ cat about_me.txt</button>
-    <button type="button" data-cmd="cat /contact.txt" data-s="FILE: contact.txt">$ cat contact.txt</button>
-  </nav>
-  <div id="log" aria-live="polite"></div>
-  <form id="f"><label for="cmd">$</label><input id="cmd" maxlength="64" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="help"></form>
-  <button id="tg" type="button" data-s="TOGGLE: CLEAN MODE">clean mode</button>
-</aside>
+  <aside id="sys" aria-label="Terminal navigation">
+    <p class="who">visitor@dornton:<span id="ps">/</span></p>
+    <nav class="cmds" aria-label="Sections">
+      <button type="button" data-cmd="cd /" data-s="HOME">$ cd /</button>
+      <button type="button" data-cmd="cd /projects" data-s="DIR: /projects">$ cd /projects</button>
+      <button type="button" data-cmd="cat /about_me.txt" data-s="FILE: about_me.txt">$ cat about_me.txt</button>
+      <button type="button" data-cmd="cat /contact.txt" data-s="FILE: contact.txt">$ cat contact.txt</button>
+    </nav>
+    <div id="log" aria-live="polite"></div>
+    <form id="f"><label for="cmd">$</label><input id="cmd" maxlength="64" autocomplete="off" autocapitalize="off"
+        spellcheck="false" placeholder="help"></form>
+    <button id="tg" type="button" data-s="TOGGLE: CLEAN MODE">clean mode</button>
+  </aside>
 
-<main id="cv">
-  <section class="view" id="hero">
-    <div class="hero">
-      <div>
-        <h1 data-s="IDENTITY: LOADED">Angelica Dornton</h1>
-        <p class="lede">I build and deploy full-stack web apps, then design the interface with a focus on typography, layout, and color.</p>
-        <p class="meta">Edgefield, SC, originally Kuwait. Open to internships and freelance.</p>
-        <p><a href="mailto:aj-dornton@proton.me" data-s="MAILTO: aj-dornton@proton.me">aj-dornton@proton.me</a></p>
+  <main id="cv">
+    <section class="view" id="hero">
+      <div class="hero">
+        <div>
+          <h1 data-s="IDENTITY: LOADED">Angelica Dornton</h1>
+          <p class="lede">i build and deploy full-stack web apps, then design the interface with focus on graphics</p>
+          <p class="meta">aiken / kuwait. open to internships and freelance.</p>
+          <p><a href="mailto:aj-dornton@proton.me" data-s="MAILTO: aj-dornton@proton.me">aj-dornton@proton.me</a></p>
+        </div>
+        <pre id="asc" aria-hidden="true"></pre>
       </div>
-      <pre id="asc" aria-hidden="true"></pre>
-    </div>
-    <div class="mq" aria-hidden="true"><div>no cookies, no analytics / every project here is a public repo / built on a saturday / no cookies, no analytics / every project here is a public repo / built on a saturday / </div></div>
-  </section>
+      <div class="mq" aria-hidden="true">
+        <div class="mqt"><span>find yourself <b>/</b> perhaps you need a spine? <b>/</b> who will you be? <b>/</b> are you preventing yourself from living the life you want? <b>/</b> reclaim your identity as an individual <b>/</b></span><span>find yourself <b>/</b> perhaps you need a spine? <b>/</b> who will you be? <b>/</b> are you preventing yourself from living the life you want? <b>/</b> reclaim your identity as an individual <b>/</b></span></div>
+      </div>
+    </section>
 
-  <section class="view" id="work" hidden>
-    <h2>cd /projects</h2>
-    <div class="cards">
-      <article class="card" data-s="digital_product_store // PHP, MYSQL // STATUS: STABLE">
-        <div class="th" aria-hidden="true"><pre data-t="PHP"></pre></div>
-        <h3>Digital product store</h3>
-        <p class="meta">ICSA Kuwait course project</p>
-        <p>A product store in PHP and MySQL with user auth, product CRUD, and an admin dashboard, built from a 5-module spec. It never sold anything, but it was my first full app built from requirements instead of a tutorial.</p>
-        <a href="https://github.com/eliutot">Read the source</a>
-      </article>
-      <article class="card" data-s="figma_ui_redesign // FIGMA // STATUS: STABLE">
-        <div class="th" aria-hidden="true"><pre data-t="UI"></pre></div>
-        <h3>Figma UI redesign</h3>
-        <p class="meta">2026, solo</p>
-        <p>A redesign of an existing app's interface in Figma.</p>
-        <a href="https://www.behance.net/angelicadornton">See it on Behance</a>
-      </article>
-    </div>
-  </section>
+    <section class="view" id="work" hidden>
+      <h2>cd /projects</h2>
+      <div class="cards">
+        <article class="card" data-s="digital_product_store // PHP, MYSQL // STATUS: STABLE">
+          <div class="th" aria-hidden="true">
+            <pre data-t="PHP"></pre>
+          </div>
+          <h3>Digital product store</h3>
+          <p class="meta">ICSA Kuwait course project</p>
+          <p>my first project! a product store in PHP and MySQL with user auth, product CRUD, and an admin dashboard, built from a
+            5-module spec. It never sold anything, but it was my first full app built from requirements instead of a
+            tutorial:)</p>
+          <a href="https://github.com/eliutot/portfolio">Read the source</a>
+        </article>
+        <article class="card" data-s="figma_ui_redesign // FIGMA // STATUS: STABLE">
+          <div class="th" aria-hidden="true">
+            <pre data-t="UI"></pre>
+          </div>
+          <h3>Spotify//OS</h3>
+          <p class="meta">2026, solo</p>
+          <p>a concept redesign of Spotify's onboarding, built as a cyber-brutalism OS interface. seven screens,
+            single-file HTML, no build step, no frameworks, no dependencies beyond two Google Fonts.</p>
+          <a href="https://peerlist.io/dornton/project/spotifyos">See it on Peerlist</a>
+          <br>
+           <a href="https://github.com/eliutot/spotify-redesign">Read the source</a>
+        </article>
+      </div>
+    </section>
 
-  <section class="view" id="about" hidden>
-    <h2>cat about_me.txt</h2>
-    <div class="intro">
-      <p class="big">Full-stack web developer and graphic designer, open to internships and freelance.</p>
-      <img class="mascot" src="assets/monokuma.gif" alt="Monokuma from Danganronpa" width="118" height="81" loading="lazy" data-s="ASSET: monokuma.gif">
-    </div>
-    <dl class="facts">
-      <dt>role</dt><dd>I build and deploy full-stack web apps, then design the interface.</dd>
-      <dt>open to</dt><dd>Internships, freelance</dd>
-      <dt>based in</dt><dd>Edgefield, SC (originally Kuwait)</dd>
-      <dt>training</dt><dd>ICSA Kuwait: full-stack web development (HTML, CSS, JavaScript, PHP, MySQL, Laravel) and graphic design (Photoshop, Illustrator, CorelDRAW). 3 programs so far.</dd>
-      <dt>learning</dt><dd>Systems administration and cloud infrastructure</dd>
-      <dt>work</dt><dd><a href="https://github.com/eliutot" rel="noopener">github.com/eliutot</a>, <a href="https://www.behance.net/angelicadornton" rel="noopener">behance.net/angelicadornton</a></dd>
-      <dt>email</dt><dd><a href="mailto:aj-dornton@proton.me">aj-dornton@proton.me</a></dd>
-    </dl>
-    <h3>tools</h3>
-    <ul class="tools"><li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/html5/html5-plain.svg" alt="" width="22" height="22" loading="lazy" data-m="HT">HTML</li><li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/css3/css3-plain.svg" alt="" width="22" height="22" loading="lazy" data-m="CS">CSS</li><li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/javascript/javascript-plain.svg" alt="" width="22" height="22" loading="lazy" data-m="Ja">JavaScript</li><li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/bootstrap/bootstrap-plain.svg" alt="" width="22" height="22" loading="lazy" data-m="Bo">Bootstrap</li><li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/php/php-plain.svg" alt="" width="22" height="22" loading="lazy" data-m="PH">PHP</li><li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mysql/mysql-plain.svg" alt="" width="22" height="22" loading="lazy" data-m="My">MySQL</li><li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/laravel/laravel-plain.svg" alt="" width="22" height="22" loading="lazy" data-m="La">Laravel</li><li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/wordpress/wordpress-plain.svg" alt="" width="22" height="22" loading="lazy" data-m="Wo">WordPress</li><li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/figma/figma-plain.svg" alt="" width="22" height="22" loading="lazy" data-m="Fi">Figma</li><li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/photoshop/photoshop-plain.svg" alt="" width="22" height="22" loading="lazy" data-m="Ph">Photoshop</li><li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/illustrator/illustrator-plain.svg" alt="" width="22" height="22" loading="lazy" data-m="Il">Illustrator</li><li><i>Co</i>CorelDRAW</li><li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/linux/linux-plain.svg" alt="" width="22" height="22" loading="lazy" data-m="Li">Linux Mint</li><li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/powershell/powershell-plain.svg" alt="" width="22" height="22" loading="lazy" data-m="Po">PowerShell</li><li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/git/git-plain.svg" alt="" width="22" height="22" loading="lazy" data-m="Gi">Git</li></ul>
-    <h3>background</h3>
-    <div class="clips">
-      <div class="clip"><h3>first project</h3><p>A digital product store in PHP and MySQL, from a 5-module spec for my ICSA web dev course. It never sold anything, but it was the first time I built a full app from a requirements document instead of copying a tutorial.</p></div>
-      <div class="clip"><h3>right now</h3><ul class="now"><li>Building this portfolio, the thing you're reading.</li><li>Learning systems administration and cloud infrastructure.</li><li>Enrolled in ICSA Kuwait's dynamic web development program: full-stack, with live deployment.</li></ul></div>
-      <div class="clip"><h3>outside the code</h3><p>High school student in Edgefield County, SC. NJROTC cadet. I run Linux Mint at home and have been building projects since middle school.</p></div>
-      <div class="clip"><h3>off the clock</h3><p>Anime and manga take up most of it: <em>Berserk</em>, <em>NANA</em>, Satoshi Kon's films, Junji Ito. Music leans nu-metal and post-punk. The full running list lives on <a href="https://passportdex.com/angelicaa" rel="noopener">Passportdex</a>.</p></div>
-    </div>
-  </section>
+    <section class="view" id="about" hidden>
+      <h2>cat about_me.txt</h2>
+      <div class="intro">
+        <p class="big">Full-stack web developer and graphic designer</p>
+        <img class="mascot" src="assets/monokuma.gif" alt="monokuma from Danganronpa, my favorite series !! " width="118"
+          height="81" loading="lazy" decoding="async" data-s="ASSET: monokuma.gif">
+      </div>
+      <dl class="facts">
+        <dt>role</dt>
+        <dd>i just build and deploy full-stack web apps, then design the user interface</dd>
+        <dt>open to</dt>
+        <dd>internships, freelance</dd>
+        <dt>based in</dt>
+        <dd>SC (originally Kuwait)</dd>
+        <dt>training</dt>
+        <dd>ICSA Kuwait: full-stack web development (HTML, CSS, JavaScript, PHP, MySQL, Laravel) and graphic design
+          (Photoshop, Illustrator, CorelDRAW). 3 programs so far, otw to 4</dd>
+        <dt>learning</dt>
+        <dd>Systems administration and cloud infrastructure</dd>
+        <dt>work</dt>
+        <dd><a href="https://github.com/eliutot" rel="noopener">github.com/eliutot</a>, <a
+            href="https://www.behance.net/angelicadornton" rel="noopener">behance.net/angelicadornton</a></dd>
+        <dt>email</dt>
+        <dd><a href="mailto:aj-dornton@proton.me">aj-dornton@proton.me</a></dd>
+      </dl>
+      <h3>tools</h3>
+      <ul class="tools">
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/html5/html5-plain.svg" alt=""
+            width="22" height="22" loading="lazy" data-m="HT">HTML</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/css3/css3-plain.svg" alt="" width="22"
+            height="22" loading="lazy" data-m="CS">CSS</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/javascript/javascript-plain.svg" alt=""
+            width="22" height="22" loading="lazy" data-m="Ja">JavaScript</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/bootstrap/bootstrap-plain.svg" alt=""
+            width="22" height="22" loading="lazy" data-m="Bo">Bootstrap</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/php/php-plain.svg" alt="" width="22"
+            height="22" loading="lazy" data-m="PH">PHP</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mysql/mysql-plain.svg" alt=""
+            width="22" height="22" loading="lazy" data-m="My">MySQL</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/laravel/laravel-plain.svg" alt=""
+            width="22" height="22" loading="lazy" data-m="La">Laravel</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/wordpress/wordpress-plain.svg" alt=""
+            width="22" height="22" loading="lazy" data-m="Wo">WordPress</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/figma/figma-plain.svg" alt=""
+            width="22" height="22" loading="lazy" data-m="Fi">Figma</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/photoshop/photoshop-plain.svg" alt=""
+            width="22" height="22" loading="lazy" data-m="Ph">Photoshop</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/illustrator/illustrator-plain.svg"
+            alt="" width="22" height="22" loading="lazy" data-m="Il">Illustrator</li>
+        <li><i>Co</i>CorelDRAW</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/linux/linux-plain.svg" alt=""
+            width="22" height="22" loading="lazy" data-m="Li">Linux Mint</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/powershell/powershell-plain.svg" alt=""
+            width="22" height="22" loading="lazy" data-m="Po">PowerShell</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/git/git-plain.svg" alt="" width="22"
+            height="22" loading="lazy" data-m="Gi">Git</li>
+      </ul>
+      <h3>background</h3>
+      <div class="clips">
+        <div class="clip">
+          <h3>first project</h3>
+          <p>a digital product store in PHP and MySQL, from a 5-module spec for my ICSA web dev course. it never sold
+            anything, although it was the first time I built a full app from a requirements document instead of copying
+            a tutorial</p>
+        </div>
+        <div class="clip">
+          <h3>right now</h3>
+          <ul class="now">
+            <li>Building this portfolio, the thing you're reading.</li>
+            <li>Learning systems administration and cloud infrastructure.</li>
+            <li>Enrolled in ICSA Kuwait's dynamic web development program: full-stack, with live deployment</li>
+          </ul>
+        </div>
+        <div class="clip">
+          <h3>outside the code</h3>
+          <p>high school student in SC. I run Linux Mint at home and have been building projects since middle school.
+          </p>
+        </div>
+        <div class="clip">
+          <h3>off the clock</h3>
+          <p>Art, anime, and manga take up the rest of my time: <em>NANA</em>, <em>Code Geass</em>, Satoshi Kon's films,
+            Junji Ito. my music taste leans towards nu-metal and post-punk ! :D The full running list lives on <a
+              href="https://passportdex.com/angelicaa" rel="noopener">Passportdex</a>.</p>
+        </div>
+      </div>
+      <p class="sig" data-s="SIGNED: A.DORNTON">Angelica</p>
+    </section>
 
-  <section class="view" id="contact" hidden>
-    <h2>cat contact.txt</h2>
-    <pre class="art" aria-hidden="true"> .--------------.
+    <section class="view" id="contact" hidden>
+      <h2>cat contact.txt</h2>
+      <pre class="art" aria-hidden="true"> .--------------.
  | \          / |
  |  \        /  |
  |   \______/   |
  '--------------'</pre>
-    <p class="big">Email is the best way to reach me.</p>
-    <div class="mail"><a class="addr" href="mailto:aj-dornton@proton.me" data-s="MAILTO: aj-dornton@proton.me">aj-dornton@proton.me</a><button id="copy" type="button">copy</button></div>
-    <p>Open to internships and freelance. Writing about a project? Tell me what you're building and when you need it.</p>
-    <ul class="links">
-      <li><a href="https://github.com/eliutot" rel="noopener">github.com/eliutot</a><span>code</span></li>
-      <li><a href="https://www.behance.net/angelicadornton" rel="noopener">behance.net/angelicadornton</a><span>visual work</span></li>
-      <li><a href="https://www.figma.com/@dornton" rel="noopener">figma.com/@dornton</a><span>interface design</span></li>
-      <li><a href="https://passportdex.com/angelicaa" rel="noopener">passportdex.com/angelicaa</a><span>media shelf</span></li>
-    </ul>
-  </section>
-</main>
+      <p class="big">Email is the best way to reach me.</p>
+      <div class="mail"><a class="addr" href="mailto:aj-dornton@proton.me"
+          data-s="MAILTO: aj-dornton@proton.me">aj-dornton@proton.me</a><button id="copy" type="button">copy</button>
+      </div>
+      <p>Open to internships and freelance. Writing about a project? Tell me what you're building and when you need it :D
+      </p>
+      <ul class="links">
+        <li><a href="https://github.com/eliutot" rel="noopener">github.com/eliutot</a><span>code</span></li>
+        <li><a href="https://www.behance.net/angelicadornton" rel="noopener">behance.net/angelicadornton</a><span>visual
+            work</span></li>
+        <li><a href="https://www.figma.com/@dornton" rel="noopener">figma.com/@dornton</a><span>interface design</span>
+        </li>
+        <li><a href="https://passportdex.com/angelicaa" rel="noopener">passportdex.com/angelicaa</a><span>media
+            shelf</span></li>
+      </ul>
+    </section>
+  </main>
 
-<footer id="bar" aria-hidden="true"></footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-<script src="app.js" defer></script>
+  <footer id="bar" aria-hidden="true"></footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="app.js" defer></script>
 </body>
+
 </html>

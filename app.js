@@ -99,7 +99,7 @@ gl_FragColor=vec4(mix(vec3(1),vec3(.75,.07,.16),e)*a,a);}`))
   ;['uT', 'uV', 'uS', 'uR'].forEach(k => { uni[k] = gl.getUniformLocation(pr, k) })
 } catch { gl = null }
 
-// 3D grid: intersections bend toward the cursor in the vertex shader
+// 3D grid
 let grid = null
 if (window.THREE && !light) {
   const T = THREE, rd = new T.WebGLRenderer({ canvas: $('#grid'), alpha: true })
@@ -127,7 +127,7 @@ vA=clamp(1.-(-mv.z)/90.,0.,1.)*(.22+.2*sin(p.z*.35-uT*2.))+f*.5;gl_Position=proj
   }
 }
 
-// bloptracking: drifting tracked blobs, plus a lock-on frame for whatever you hover
+// bloptracking
 const bc = $('#blob'), b2 = bc.getContext('2d'), blobs = Array.from({ length: 6 }, (_, i) => ({ i, x: innerWidth / 2, y: innerHeight / 2, s: 40 + i * 14 }))
 const box = { x: 0, y: 0, w: 0, h: 0 }
 let lockEl = null

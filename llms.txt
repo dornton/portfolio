@@ -1,7 +1,6 @@
 # Angelica Dornton
 
-> Full-stack web developer and graphic designer based in Edgefield, SC. Trained at ICSA Kuwait (HTML, CSS, JavaScript, PHP, MySQL, Laravel, Photoshop, Illustrator, CorelDRAW). Open to internships and freelance.
-
+> student. i just make things i guess ? :/
 - [Portfolio](https://eliutot.github.io/): projects, about, contact
 - [GitHub](https://github.com/eliutot)
 - [Behance](https://www.behance.net/angelicadornton)
