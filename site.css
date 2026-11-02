@@ -1,5 +1,5 @@
-@font-face{font-family:Cavalhatriz;src:url("assets/cavalhatriz.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:Byron;src:url("assets/byron.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Cavalhatriz;src:url("cavalhatriz.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Byron;src:url("byron.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
 :root{--bg:#0a0a0a;--panel:rgba(14,14,14,.9);--fg:#e9e7e1;--dim:#8d8b85;--line:#2b2b2b;--red:#bf1229;--blue:var(--red);--blue-dim:#8d8b85;--disp:"Archivo",Impact,sans-serif;--name:"Cavalhatriz","Archivo",Impact,sans-serif;--sig:"Byron","Segoe Script","Bradley Hand",cursive;--mono:"Roboto Mono",ui-monospace,Menlo,monospace}
 ::selection{background:var(--blue);color:#e9e7e1}
 *{box-sizing:border-box}
